@@ -1,1 +1,1 @@
-Unwieldy is a superior life style
+Unwieldy is a superior lifestyle
