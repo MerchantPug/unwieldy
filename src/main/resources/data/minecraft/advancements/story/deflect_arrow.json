@@ -2,7 +2,7 @@
   "parent": "minecraft:story/obtain_armor",
   "display": {
     "icon": {
-      "item": "minecraft:barrier"
+      "item": "minecraft:air"
     },
     "title": {
       "translate": "advancements.story.deflect_arrow.title"
