@@ -3,6 +3,7 @@ package io.github.merchantpug.unwieldy.recipe;
 import io.github.merchantpug.unwieldy.Unwieldy;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.util.Identifier;

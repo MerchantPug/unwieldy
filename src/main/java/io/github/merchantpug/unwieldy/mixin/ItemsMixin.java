@@ -14,7 +14,7 @@ public class ItemsMixin {
     @Inject(method = "register(Lnet/minecraft/util/Identifier;Lnet/minecraft/item/Item;)Lnet/minecraft/item/Item;", at = @At("HEAD"), cancellable = true)
     private static void unwieldy(Identifier id, Item item, CallbackInfoReturnable<Item> cir) {
         if (item instanceof ShieldItem) {
-            cir.cancel();
+            cir.cancel();;
         }
     }
 }
