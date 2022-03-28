@@ -20,12 +20,14 @@
   "entrypoints": {
     "main": [
       "io.github.merchantpug.unwieldy.Unwieldy"
+    ],
+    "client": [
+      "io.github.merchantpug.unwieldy.UnwieldyClient"
     ]
   },
   "mixins": [
     "unwieldy.mixins.json"
   ],
-
   "depends": {
     "fabric": "*",
     "fabricloader": ">=0.11.3",
