@@ -11,10 +11,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Items.class)
 public class ItemsMixin {
-    @Inject(method = "register(Lnet/minecraft/util/Identifier;Lnet/minecraft/item/Item;)Lnet/minecraft/item/Item;", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "register(Ljava/lang/String;Lnet/minecraft/item/Item;)Lnet/minecraft/item/Item;", at = @At("HEAD"), cancellable = true)
+    private static void unwieldy(String id, Item item, CallbackInfoReturnable<Item> cir) {
+        if (item instanceof ShieldItem) {
+            cir.cancel();
+        }
+    }
+
+    @Inject(method = "register(Lnet/minecraft/util/Identifier;Lnet/minecraft/item/Item;)Lnet/minecraft/item/Item;", at = @At("HEAD"), cancellable = true)
     private static void unwieldy(Identifier id, Item item, CallbackInfoReturnable<Item> cir) {
         if (item instanceof ShieldItem) {
-            cir.cancel();;
+            cir.cancel();
         }
     }
 }
