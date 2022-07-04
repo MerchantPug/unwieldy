@@ -1,19 +1,20 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "io.github.merchantpug.unwieldy.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "package": "com.github.merchantpug.unwieldy.mixin",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "ItemsMixin",
     "LiteralTextMixin",
     "PlayerScreenHandlerMixin",
+    "RegistryMixin",
     "SimpleRegistryMixin",
     "TranslatableTextMixin"
   ],
   "client": [
-    "ClientPlayNetworkHandlerMixin",
-    "ModelLoaderMixin",
-    "StatusEffectSpriteManagerMixin"
+    "client.ClientPlayNetworkHandlerMixin",
+    "client.ModelLoaderMixin",
+    "client.StatusEffectSpriteManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1,

@@ -1,6 +1,6 @@
-package io.github.merchantpug.unwieldy.mixin;
+package com.github.merchantpug.unwieldy.mixin;
 
-import io.github.merchantpug.unwieldy.Unwieldy;
+import com.github.merchantpug.unwieldy.Unwieldy;
 import net.minecraft.text.*;
 import org.apache.commons.lang3.StringUtils;
 import org.spongepowered.asm.mixin.Mixin;

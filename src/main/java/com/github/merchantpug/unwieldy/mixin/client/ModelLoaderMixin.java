@@ -1,6 +1,6 @@
-package io.github.merchantpug.unwieldy.mixin;
+package com.github.merchantpug.unwieldy.mixin.client;
 
-import io.github.merchantpug.unwieldy.Unwieldy;
+import com.github.merchantpug.unwieldy.Unwieldy;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.model.ModelLoader;

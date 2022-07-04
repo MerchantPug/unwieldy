@@ -1,0 +1,88 @@
+name: Release
+on: [workflow_dispatch]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: 17
+
+      - name: Make Gradle Wrapper Executable
+        if: ${{ runner.os != 'Windows' }}
+        run: chmod +x ./gradlew
+
+      - name: Build
+        run: ./gradlew clean build
+
+      - name: Publish (CurseForge/Modrinth)
+        uses: Kir-Antipov/mc-publish@v3.0
+        with:
+          # Modrinth
+          modrinth-id: rG5fcNfV
+          modrinth-featured: true
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          # CurseForge
+          curseforge-id: 566440
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          # Config
+          name: Unwieldy v1.3.0 (Fabric 1.18.2)
+          version: v1.3.0+1.18.2
+          version-type: release
+          changelog-file: CHANGELOG.md
+          files-primary: build/libs/!(*-@(dev|sources)).jar
+          files-secondary: ""
+
+          loaders: |
+            fabric
+            quilt
+          game-versions: |
+            1.18.2
+          dependencies: |
+            fabric-api | depends | *
+          java: |
+            17
+
+          retry-attempts: 2
+          retry-delay: 10000
+
+      - name: Publish (GitHub)
+        uses: Kir-Antipov/mc-publish@v3.0
+        with:
+          # GitHub
+          github-tag: v1.3.0
+          github-draft: false
+          github-prerelease: false
+          github-commitish: 1.18
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          name: Unwieldy v1.3.0 (Fabric 1.18.2)
+          version: v1.3.0+1.18.2
+          version-type: release
+          changelog-file: CHANGELOG.md
+
+          loaders: |
+            fabric
+            quilt
+          game-versions: |
+            1.18.2
+          dependencies: |
+            fabric-api | depends | *
+          java: |
+            17
+
+          retry-attempts: 2
+          retry-delay: 10000

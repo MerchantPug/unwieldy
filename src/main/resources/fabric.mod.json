@@ -19,10 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.merchantpug.unwieldy.Unwieldy"
-    ],
-    "client": [
-      "io.github.merchantpug.unwieldy.UnwieldyClient"
+      "com.github.merchantpug.unwieldy.Unwieldy"
     ]
   },
   "mixins": [

@@ -1,7 +1,7 @@
-package io.github.merchantpug.unwieldy.mixin;
+package com.github.merchantpug.unwieldy.mixin;
 
 import com.mojang.datafixers.util.Pair;
-import io.github.merchantpug.unwieldy.Unwieldy;
+import com.github.merchantpug.unwieldy.Unwieldy;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
