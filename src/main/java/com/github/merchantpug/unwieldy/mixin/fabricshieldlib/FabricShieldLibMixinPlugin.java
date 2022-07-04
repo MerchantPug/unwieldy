@@ -20,7 +20,7 @@ public class FabricShieldLibMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return !mixinClassName.contains("mixin.fabricshieldlib") || FabricLoader.getInstance().isModLoaded("fabricshieldlib");
+        return FabricLoader.getInstance().isModLoaded("fabricshieldlib");
     }
 
     @Override

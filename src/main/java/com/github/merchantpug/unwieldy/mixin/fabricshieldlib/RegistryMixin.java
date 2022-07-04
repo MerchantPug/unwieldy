@@ -1,6 +1,7 @@
 package com.github.merchantpug.unwieldy.mixin.fabricshieldlib;
 
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricShield;
+import com.github.merchantpug.unwieldy.Unwieldy;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;

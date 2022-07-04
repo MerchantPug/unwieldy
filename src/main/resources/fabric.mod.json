@@ -23,7 +23,8 @@
     ]
   },
   "mixins": [
-    "unwieldy.mixins.json"
+    "unwieldy.mixins.json",
+    "unwieldy.fabricshieldlib.mixins.json"
   ],
   "depends": {
     "fabric": "*",

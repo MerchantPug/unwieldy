@@ -3,7 +3,6 @@ package com.github.merchantpug.unwieldy.mixin.fabricshieldlib;
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricShield;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.item.ShieldItem;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
