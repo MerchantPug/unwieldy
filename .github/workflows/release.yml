@@ -27,7 +27,7 @@ jobs:
         run: ./gradlew clean build
 
       - name: Publish (CurseForge/Modrinth)
-        uses: Kir-Antipov/mc-publish@v3.0
+        uses: Kir-Antipov/mc-publish@v3.2
         with:
           # Modrinth
           modrinth-id: rG5fcNfV
@@ -62,7 +62,7 @@ jobs:
           retry-delay: 10000
 
       - name: Publish (GitHub)
-        uses: Kir-Antipov/mc-publish@v3.0
+        uses: Kir-Antipov/mc-publish@v3.2
         with:
           # GitHub
           github-tag: v1.4.0
@@ -85,6 +85,8 @@ jobs:
             1.19.2
           dependencies: |
             fabric-api | depends | *
+            fabricshieldlib | suggests | *
+            origins | suggests | *
           java: |
             17
 
