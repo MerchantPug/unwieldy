@@ -1,6 +1,5 @@
-package com.github.merchantpug.unwieldy.mixin.fabricshieldlib;
+package net.merchantpug.unwieldy.mixin;
 
-import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricShield;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.SimpleRegistry;
@@ -13,8 +12,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class SimpleRegistryMixin<T> {
 
     @Inject(method = "createEntry", at = @At("HEAD"), cancellable = true)
-    private void preventCrash(T value, CallbackInfoReturnable<RegistryEntry.Reference<T>> cir) {
-        if (value instanceof FabricShield) {
+    private void unwieldy$preventCrash(T value, CallbackInfoReturnable<RegistryEntry.Reference<T>> cir) {
+        if (value instanceof ShieldItem) {
             cir.cancel();
         }
     }

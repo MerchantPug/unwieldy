@@ -1,4 +1,4 @@
-package com.github.merchantpug.unwieldy.mixin.fabricshieldlib;
+package net.merchantpug.unwieldy;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import java.util.List;
 import java.util.Set;
 
-public class FabricShieldLibMixinPlugin implements IMixinConfigPlugin {
+public class UnwieldyMixinPlugin implements IMixinConfigPlugin {
     @Override
     public void onLoad(String mixinPackage) {
     }
@@ -20,7 +20,12 @@ public class FabricShieldLibMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return FabricLoader.getInstance().isModLoaded("fabricshieldlib");
+        if (mixinClassName.startsWith("net.merchantpug.unwieldy.mixin.fabricshieldlib.")) {
+            return FabricLoader.getInstance().isModLoaded("fabricshieldlib");
+        } else if (mixinClassName.startsWith("net.merchantpug.unwieldy.mixin.origins.")) {
+            return FabricLoader.getInstance().isModLoaded("origins");
+        }
+        return true;
     }
 
     @Override

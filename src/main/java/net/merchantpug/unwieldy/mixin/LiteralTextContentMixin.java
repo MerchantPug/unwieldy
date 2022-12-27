@@ -1,7 +1,7 @@
-package com.github.merchantpug.unwieldy.mixin;
+package net.merchantpug.unwieldy.mixin;
 
-import com.github.merchantpug.unwieldy.Unwieldy;
-import net.minecraft.text.LiteralText;
+import net.merchantpug.unwieldy.Unwieldy;
+import net.minecraft.text.LiteralTextContent;
 import org.apache.commons.lang3.StringUtils;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,14 +11,13 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(LiteralText.class)
-public class LiteralTextMixin {
+@Mixin(LiteralTextContent.class)
+public class LiteralTextContentMixin {
     @Mutable
     @Shadow @Final private String string;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void removeMentionsOfShields(String string, CallbackInfo ci) {
-        if (!StringUtils.containsIgnoreCase(string, Unwieldy.getShieldInLanguage())) return;
-        this.string = StringUtils.replaceIgnoreCase(string, Unwieldy.getShieldInLanguage(), "");
+    private void unwieldy$removeMentionsOfShields(String string, CallbackInfo ci) {
+        this.string = StringUtils.replaceIgnoreCase(this.string, Unwieldy.getShieldInLanguage(), "");
     }
 }

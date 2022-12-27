@@ -1,18 +1,22 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.github.merchantpug.unwieldy.mixin",
+  "package": "net.merchantpug.unwieldy.mixin",
+  "plugin": "net.merchantpug.unwieldy.UnwieldyMixinPlugin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "ItemsMixin",
-    "LiteralTextMixin",
+    "LiteralTextContentMixin",
     "PlayerScreenHandlerMixin",
     "RegistryMixin",
     "SimpleRegistryMixin",
-    "TranslatableTextMixin"
+    "TranslatableTextContentMixin",
+    "fabricshieldlib.ItemsMixin",
+    "fabricshieldlib.RegistryMixin",
+    "fabricshieldlib.SimpleRegistryMixin",
+    "origins.OriginManagerMixin"
   ],
   "client": [
-    "client.ClientPlayNetworkHandlerMixin",
     "client.ModelLoaderMixin",
     "client.StatusEffectSpriteManagerMixin"
   ],

@@ -1,6 +1,6 @@
-package com.github.merchantpug.unwieldy.recipe;
+package net.merchantpug.unwieldy.recipe;
 
-import com.github.merchantpug.unwieldy.Unwieldy;
+import net.merchantpug.unwieldy.Unwieldy;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeSerializer;

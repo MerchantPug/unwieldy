@@ -1,6 +1,6 @@
-package com.github.merchantpug.unwieldy.mixin.client;
+package net.merchantpug.unwieldy.mixin.client;
 
-import com.github.merchantpug.unwieldy.Unwieldy;
+import net.merchantpug.unwieldy.Unwieldy;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.model.ModelLoader;
@@ -17,7 +17,7 @@ import java.util.HashSet;
 @Mixin(ModelLoader.class)
 public class ModelLoaderMixin {
     @Inject(method = "method_24150", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/TexturedRenderLayers;addDefaultTextures(Ljava/util/function/Consumer;)V"))
-    private static void addNewOffhandInventorySlotToMap(HashSet hashSet, CallbackInfo ci) {
+    private static void unwieldy$addNewOffhandInventorySlotToMap(HashSet hashSet, CallbackInfo ci) {
         hashSet.add(new SpriteIdentifier(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE, Unwieldy.identifier("item/empty_armor_slot_offhand")));
     }
 }

@@ -1,6 +1,6 @@
-package com.github.merchantpug.unwieldy.mixin.client;
+package net.merchantpug.unwieldy.mixin.client;
 
-import com.github.merchantpug.unwieldy.Unwieldy;
+import net.merchantpug.unwieldy.Unwieldy;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.texture.Sprite;
@@ -30,14 +30,14 @@ public abstract class StatusEffectSpriteManagerMixin extends SpriteAtlasHolder {
     }
 
     @Inject(method = "getSprites", at = @At("RETURN"), cancellable = true)
-    private void addBlankMobEffectToReturnValue(CallbackInfoReturnable<Stream<Identifier>> cir) {
+    private void unwieldy$addBlankMobEffectToReturnValue(CallbackInfoReturnable<Stream<Identifier>> cir) {
         List<Identifier> identifierList = cir.getReturnValue().collect(Collectors.toList());
         identifierList.add(Unwieldy.identifier("unwieldy"));
         cir.setReturnValue(identifierList.stream());
     }
 
     @Inject(method = "getSprite", at = @At(value = "RETURN"), cancellable = true)
-    private void removeShieldFromEvent(StatusEffect effect, CallbackInfoReturnable<Sprite> cir) {
+    private void unwieldy$removeShieldFromEffectIcon(StatusEffect effect, CallbackInfoReturnable<Sprite> cir) {
         Optional<RegistryKey<StatusEffect>> effectKey = Registry.STATUS_EFFECT.getKey(effect);
         if (effectKey.isPresent() && Registry.STATUS_EFFECT.entryOf(effectKey.get()).isIn(Unwieldy.UNWIELDY_STATUS_EFFECT_TAG)) {
             cir.setReturnValue(this.getSprite(Unwieldy.identifier("unwieldy")));

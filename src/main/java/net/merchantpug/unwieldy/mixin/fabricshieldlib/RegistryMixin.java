@@ -1,7 +1,7 @@
-package com.github.merchantpug.unwieldy.mixin.fabricshieldlib;
+package net.merchantpug.unwieldy.mixin.fabricshieldlib;
 
 import com.github.crimsondawn45.fabricshieldlib.lib.object.FabricShield;
-import com.github.merchantpug.unwieldy.Unwieldy;
+import net.merchantpug.unwieldy.Unwieldy;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -14,21 +14,22 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class RegistryMixin {
 
     @Inject(method = "register(Lnet/minecraft/util/registry/Registry;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;", at = @At("HEAD"), cancellable = true)
-    private static <V, T extends V> void cancelShieldRegistration0(Registry<? super T> registry, String id, T entry, CallbackInfoReturnable<T> cir) {
+    private static <V, T extends V> void unwieldy$cancelShieldRegistration0(Registry<? super T> registry, String id, T entry, CallbackInfoReturnable<T> cir) {
         if (entry instanceof FabricShield) {
             cir.cancel();
         }
     }
 
     @Inject(method = "register(Lnet/minecraft/util/registry/Registry;Lnet/minecraft/util/Identifier;Ljava/lang/Object;)Ljava/lang/Object;", at = @At("HEAD"), cancellable = true)
-    private static <V, T extends V> void cancelShieldRegistration1(Registry<V> registry, Identifier id, T entry, CallbackInfoReturnable<T> cir) {
+    private static <V, T extends V> void unwieldy$cancelShieldRegistration1(Registry<V> registry, Identifier id, T entry, CallbackInfoReturnable<T> cir) {
         if (entry instanceof FabricShield) {
+            Unwieldy.SHIELD_INDEX.add(id);
             cir.cancel();
         }
     }
 
     @Inject(method = "register(Lnet/minecraft/util/registry/Registry;Lnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;)Ljava/lang/Object;", at = @At("HEAD"), cancellable = true)
-    private static <V, T extends V> void cancelShieldRegistration2(Registry<V> registry, RegistryKey<V> key, T entry, CallbackInfoReturnable<T> cir) {
+    private static <V, T extends V> void unwieldy$cancelShieldRegistration2(Registry<V> registry, RegistryKey<V> key, T entry, CallbackInfoReturnable<T> cir) {
         if (entry instanceof FabricShield) {
             cir.cancel();
         }

@@ -1,6 +1,6 @@
-package com.github.merchantpug.unwieldy;
+package net.merchantpug.unwieldy;
 
-import com.github.merchantpug.unwieldy.recipe.ImpossibleRecipe;
+import net.merchantpug.unwieldy.recipe.ImpossibleRecipe;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.effect.StatusEffect;
@@ -13,10 +13,13 @@ import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.HashSet;
+
 public class Unwieldy implements ModInitializer {
 	public static final String MODID = "unwieldy";
 	public static final Logger LOGGER = LogManager.getLogger(Unwieldy.class);
 	public static String VERSION = "";
+	public static final HashSet<Identifier> SHIELD_INDEX = new HashSet<>();
 
 	public static final SpecialRecipeSerializer<ImpossibleRecipe> IMPOSSIBLE_RECIPE = RecipeSerializer.register("unwieldy:crafting_impossible", new SpecialRecipeSerializer<>(ImpossibleRecipe::new));
 
