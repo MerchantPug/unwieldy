@@ -39,8 +39,8 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           # Config
-          name: Unwieldy v1.4.1 (Fabric/Quilt 1.19.3)
-          version: 1.4.1+1.19.3
+          name: Unwieldy v1.5.0 (Fabric/Quilt 1.19.3)
+          version: 1.5.0+1.19.3
           version-type: release
           changelog-file: CHANGELOG.md
           files-primary: build/libs/!(*-@(dev|sources)).jar
@@ -64,14 +64,14 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.2
         with:
           # GitHub
-          github-tag: 1.4.1+1.19.3
+          github-tag: 1.5.0+1.19.3
           github-draft: false
           github-prerelease: false
           github-commitish: 1.19
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          name: Unwieldy v1.4.1 (Fabric/Quilt 1.19.3)
-          version: 1.4.1+1.19.3
+          name: Unwieldy v1.5.0 (Fabric/Quilt 1.19.3)
+          version: 1.5.0+1.19.3
           version-type: release
           changelog-file: CHANGELOG.md
 
