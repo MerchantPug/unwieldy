@@ -6,10 +6,10 @@
   "name": "Unwieldy",
   "description": "The way your hands are formed provide no way of holding a shield upright.",
   "authors": [
-    "Pug"
+    "MerchantPug"
   ],
   "contact": {
-    "homepage": "",
+    "homepage": "https://modrinth.com/mod/unwieldy",
     "sources": "https://github.com/MerchantPug/unwieldy"
   },
 
@@ -27,12 +27,8 @@
   ],
   "depends": {
     "fabric": "*",
-    "fabricloader": ">=0.12.3",
-    "minecraft": [
-      "1.19",
-      "1.19.1",
-      "1.19.2"
-    ],
+    "fabricloader": ">=0.14.8",
+    "minecraft": ">=1.19.3",
     "java": ">=17"
   }
 }

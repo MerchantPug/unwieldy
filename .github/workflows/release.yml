@@ -39,8 +39,8 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           # Config
-          name: Unwieldy v1.4.0 (Fabric/Quilt 1.19.0-2)
-          version: v1.4.0+1.19.2
+          name: Unwieldy v1.4.1 (Fabric/Quilt 1.19.3)
+          version: 1.4.1+1.19.3
           version-type: release
           changelog-file: CHANGELOG.md
           files-primary: build/libs/!(*-@(dev|sources)).jar
@@ -50,11 +50,10 @@ jobs:
             fabric
             quilt
           game-versions: |
-            1.19.2
+            1.19.3
           dependencies: |
             fabric-api | depends | *
             fabricshieldlib | suggests | *
-            origins | suggests | *
           java: |
             17
 
@@ -65,14 +64,14 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.2
         with:
           # GitHub
-          github-tag: v1.4.0
+          github-tag: 1.4.1+1.19.3
           github-draft: false
           github-prerelease: false
-          github-commitish: 1.18
+          github-commitish: 1.19
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          name: Unwieldy v1.4.0 (Fabric/Quilt 1.19.0-2)
-          version: v1.4.0+1.19.2
+          name: Unwieldy v1.4.1 (Fabric/Quilt 1.19.3)
+          version: 1.4.1+1.19.3
           version-type: release
           changelog-file: CHANGELOG.md
 
@@ -80,13 +79,10 @@ jobs:
             fabric
             quilt
           game-versions: |
-            1.19
-            1.19.1
-            1.19.2
+            1.19.3
           dependencies: |
             fabric-api | depends | *
             fabricshieldlib | suggests | *
-            origins | suggests | *
           java: |
             17
 

@@ -60,7 +60,7 @@ dependencies {
 	// Origins
 	// modImplementation ("com.github.apace100:origins-fabric:${project.origins_version}")
 	// Temporary fix (Thank you eggohito)
-	modImplementation ("com.github.eggohito:origins-fabric:${project.origins_version}")
+	// modImplementation ("com.github.eggohito:origins-fabric:${project.origins_version}")
 }
 
 processResources {

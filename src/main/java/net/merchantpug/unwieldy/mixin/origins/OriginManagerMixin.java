@@ -1,15 +1,14 @@
+// TODO Reimplement Origins compat once a 1.19.3 version releases.
+/*
 package net.merchantpug.unwieldy.mixin.origins;
 
 import com.google.gson.JsonElement;
-import io.github.apace100.apoli.power.PreventItemUsePower;
 import io.github.apace100.apoli.power.PowerType;
 import io.github.apace100.apoli.power.PowerTypeRegistry;
 import io.github.apace100.origins.Origins;
 import io.github.apace100.origins.origin.Origin;
 import io.github.apace100.origins.origin.OriginManager;
 import net.merchantpug.unwieldy.Unwieldy;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -28,3 +27,4 @@ public class OriginManagerMixin {
         origin.add(powerType);
     }
 }
+*/

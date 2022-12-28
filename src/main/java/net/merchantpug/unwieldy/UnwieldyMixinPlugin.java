@@ -22,9 +22,10 @@ public class UnwieldyMixinPlugin implements IMixinConfigPlugin {
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         if (mixinClassName.startsWith("net.merchantpug.unwieldy.mixin.fabricshieldlib.")) {
             return FabricLoader.getInstance().isModLoaded("fabricshieldlib");
-        } else if (mixinClassName.startsWith("net.merchantpug.unwieldy.mixin.origins.")) {
+        } /* else if (mixinClassName.startsWith("net.merchantpug.unwieldy.mixin.origins.")) {
             return FabricLoader.getInstance().isModLoaded("origins");
-        }
+        } */
+
         return true;
     }
 

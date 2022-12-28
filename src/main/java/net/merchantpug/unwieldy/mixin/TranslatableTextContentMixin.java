@@ -22,7 +22,7 @@ public class TranslatableTextContentMixin {
         return string;
     }
 
-    @Inject(method = "getArg", at = @At("RETURN"), locals = LocalCapture.CAPTURE_FAILHARD, cancellable = true)
+    @Inject(method = "getArg", at = @At(value = "RETURN", ordinal = 1), locals = LocalCapture.CAPTURE_FAILHARD, cancellable = true)
     private void unwieldy$removeMentionsOfShieldsInArgs(int index, CallbackInfoReturnable<StringVisitable> cir, Object object) {
         if (!(object instanceof Text)) {
             String textString = object.toString();

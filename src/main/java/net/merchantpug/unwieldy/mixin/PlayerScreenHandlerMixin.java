@@ -12,7 +12,6 @@ import static net.minecraft.screen.PlayerScreenHandler.BLOCK_ATLAS_TEXTURE;
 
 @Mixin(targets = "net.minecraft.screen.PlayerScreenHandler$2")
 public class PlayerScreenHandlerMixin {
-
     @Inject(method = "getBackgroundSprite", at = @At("RETURN"), cancellable = true)
     private void unwieldy$removeShieldOffhandSprite(CallbackInfoReturnable<Pair<Identifier, Identifier>> cir) {
         cir.setReturnValue(Pair.of(BLOCK_ATLAS_TEXTURE, Unwieldy.identifier("item/empty_armor_slot_offhand")));

@@ -5,6 +5,8 @@
   "plugin": "net.merchantpug.unwieldy.UnwieldyMixinPlugin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "EntriesImplMixin",
+    "FabricItemGroupEntriesMixin",
     "ItemsMixin",
     "LiteralTextContentMixin",
     "PlayerScreenHandlerMixin",
@@ -13,11 +15,9 @@
     "TranslatableTextContentMixin",
     "fabricshieldlib.ItemsMixin",
     "fabricshieldlib.RegistryMixin",
-    "fabricshieldlib.SimpleRegistryMixin",
-    "origins.OriginManagerMixin"
+    "fabricshieldlib.SimpleRegistryMixin"
   ],
   "client": [
-    "client.ModelLoaderMixin",
     "client.StatusEffectSpriteManagerMixin"
   ],
   "injectors": {

@@ -22,7 +22,6 @@ public class ItemsMixin {
     @Inject(method = "register(Lnet/minecraft/util/Identifier;Lnet/minecraft/item/Item;)Lnet/minecraft/item/Item;", at = @At("HEAD"), cancellable = true)
     private static void unwieldy$unwieldy(Identifier id, Item item, CallbackInfoReturnable<Item> cir) {
         if (item instanceof FabricShield) {
-            Unwieldy.SHIELD_INDEX.add(id);
             cir.cancel();
         }
     }

@@ -1,9 +1,10 @@
-## Unwieldy v1.4.0 (Fabric/Quilt 1.19.0-2)
 **General**
-- Updated to 1.19-1.19.2.
+- Updated to 1.19.3.
 
 **Compatibility**
-- Added Origins compatibility. Every Origin now has the `origins:no_shield` power, you cannot run from this.
+- Disabled Origins compatibility for the time being.
 
-**Internal**
-- Changed package to net.merchantpug.unwieldy (previously com.github.merchantpug.unwieldy)
+**Miscellaneous**
+- Update author to MerchantPug instead of Pug.
+- Add Homepage to fabric.mod.json.
+- Internal cleanup.
